@@ -18,21 +18,14 @@ After installing SecurityOnion (SO), the system will reboot and you’ll be pres
 3. *user@host#* `fdisk /dev/sdb` [^3]  
 > NOTE: Interpretation is required to understand what drives belong to what.
 4.
-Command (m for help): `n`
-
-Select (default p): `{ENTER} `
-
-Partition number (1-4, default 1): `{ENTER} `
-
-First sector (2048-16777215, default 2048): `{ENTER} `
-
-Last sector, +sectors or +size{K,M,G} (2048-16777215, default 16777215): `{ENTER} `
-
-Command (m for help): `t `
-
-Hex code (type L to list all codes): `8e `
-
-Command (m for help): `w `
+   *Command (m for help):* `n`
+   *Select (default p): *`{ENTER} `
+   *Partition number (1-4, default 1):* `{ENTER} `
+   *First sector (2048-16777215, default 2048):* `{ENTER} `
+   *Last sector, +sectors or +size{K,M,G} (2048-16777215, default 16777215): *`{ENTER} `
+  *Command (m for help):* `t `
+   *Hex code (type L to list all codes):* `8e `
+   *Command (m for help):* `w `
 
 
 5. k
@@ -42,9 +35,9 @@ Command (m for help): `w `
 9. k
 10. k
     
-[^1]:1. Changes user to root (SuperUser)
-[^2]:2. List details about block devices
-[^3]:3. Starts Fdisk utility for disk [sdb]. Sdb is the assumed additional drive.  Fdisk manages disks (drives) and partitions 
+[^1]:Changes user to root (SuperUser)
+[^2]:List details about block devices
+[^3]:Starts Fdisk utility for disk [sdb]. Sdb is the assumed additional drive.  Fdisk manages disks (drives) and partitions 
 
 
 
