@@ -14,22 +14,25 @@ After installing SecurityOnion (SO), the system will reboot and you’ll be pres
 
 # Steps
 1. *user@host#* `sudo su`  [^1] 
-[^1]:Changes user to root (SuperUser) 
 2. *user@host#* `lsblk`  [^2]  
-[^2]:List details about block devices
-3. *user@host#* `fdisk /dev/sdb` [^3]  
-[^3]:Starts Fdisk utility for disk [sdb]. Sdb is the assumed additional drive.  Fdisk manages disks (drives) and partitions
 > NOTE: Interpretation is required to understand what drives belong to what.
+3. *user@host#* `fdisk /dev/sdb` [^3]  
 4.
-   *Command (m for help):* `n`
-   *Select (default p):* `{ENTER} `
-   *Partition number (1-4, default 1):* `{ENTER} `
-   *First sector (2048-16777215, default 2048):* `{ENTER} `
-   *Last sector, +sectors or +size{K,M,G} (2048-16777215, default 16777215):* `{ENTER}`
-   *Command (m for help):* `t`
-   *Hex code (type L to list all codes):* `8e`
-   *Command (m for help):* `w`
+   *Command (m for help):* `n`
 
+   *Select (default p):* `{ENTER} `
+
+   *Partition number (1-4, default 1):* `{ENTER} `
+
+   *First sector (2048-16777215, default 2048):* `{ENTER} `
+
+   *Last sector, +sectors or +size{K,M,G} (2048-16777215, default 16777215):* `{ENTER}`
+
+   *Command (m for help):* `t`
+
+   *Hex code (type L to list all codes):* `8e`
+
+   *Command (m for help):* `w`
 
 5. k
 6. k
@@ -38,9 +41,12 @@ After installing SecurityOnion (SO), the system will reboot and you’ll be pres
 9. k
 10. k
     
+## Explanations
+### These explain the "Why" of each step.
 
-
-[^3]:Starts Fdisk utility for disk [sdb]. Sdb is the assumed additional drive.  Fdisk manages disks (drives) and partitions 
+[^1]:Changes user to root (SuperUser)
+[^2]:List details about block devices
+[^3]:Starts Fdisk utility for disk [sdb]. Sdb is the assumed additional drive.  Fdisk manages disks (drives) and partitions
 
 
 
