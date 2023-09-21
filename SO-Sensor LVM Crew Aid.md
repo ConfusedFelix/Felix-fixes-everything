@@ -13,9 +13,9 @@ After installing SecurityOnion (SO), the system will reboot and you’ll be pres
 > Note: This was written with CentOS in mind, but will work for many if not all flavors of linux.
 
 # Steps
-1. *user@host#* `sudo su`[^1] 
+1. *user@host#* `sudo su`  [^1] 
 [^1]:Changes user to root (SuperUser) 
-2. *user@host#* `lsblk`[^2]  
+2. *user@host#* `lsblk`  [^2]  
 [^2]:List details about block devices
 3. *user@host#* `fdisk /dev/sdb` [^3]  
 [^3]:Starts Fdisk utility for disk [sdb]. Sdb is the assumed additional drive.  Fdisk manages disks (drives) and partitions
