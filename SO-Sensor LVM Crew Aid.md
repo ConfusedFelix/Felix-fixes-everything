@@ -19,13 +19,13 @@ After installing SecurityOnion (SO), the system will reboot and you’ll be pres
 > NOTE: Interpretation is required to understand what drives belong to what.
 4.
    *Command (m for help):* `n`
-   *Select (default p): *`{ENTER} `
+   *Select (default p):* `{ENTER} `
    *Partition number (1-4, default 1):* `{ENTER} `
    *First sector (2048-16777215, default 2048):* `{ENTER} `
-   *Last sector, +sectors or +size{K,M,G} (2048-16777215, default 16777215): *`{ENTER} `
+   *Last sector, +sectors or +size{K,M,G} (2048-16777215, default 16777215):* `{ENTER} `
   *Command (m for help):* `t `
-   *Hex code (type L to list all codes):* `8e `
-   *Command (m for help):* `w `
+   *Hex code (type L to list all codes):* `8e `
+   *Command (m for help):* `w `
 
 
 5. k
