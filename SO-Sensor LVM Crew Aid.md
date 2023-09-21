@@ -26,7 +26,7 @@ After installing SecurityOnion (SO), the system will reboot and you’ll be pres
    *Partition number (1-4, default 1):* `{ENTER} `
    *First sector (2048-16777215, default 2048):* `{ENTER} `
    *Last sector, +sectors or +size{K,M,G} (2048-16777215, default 16777215):* `{ENTER} `
-  *Command (m for help):* `t `
+   *Command (m for help):* `t `
    *Hex code (type L to list all codes):* `8e `
    *Command (m for help):* `w `
 
