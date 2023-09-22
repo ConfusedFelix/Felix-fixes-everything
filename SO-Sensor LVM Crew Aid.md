@@ -32,7 +32,8 @@ After installing SecurityOnion (SO), the system will reboot and you’ll be pres
 
    *Hex code (type L to list all codes):* `8e`
 
-   *Command (m for help):* `w`
+   *Command (m for help):* `w`
+
 
 5. k
 6. k
@@ -40,11 +41,87 @@ After installing SecurityOnion (SO), the system will reboot and you’ll be pres
 8. k
 9. k
 10. k
+
+
+ 
+
+Command (m for help): n 
+
+Select (default p): {ENTER} 
+
+Partition number (1-4, default 1): {ENTER} 
+
+First sector (2048-16777215, default 2048): {ENTER} 
+
+Last sector, +sectors or +size{K,M,G} (2048-16777215, default 16777215): {ENTER} 
+
+Command (m for help): t 
+
+Hex code (type L to list all codes): 8e 
+
+Command (m for help): w 
+
+ 
+
+Press M for a full list of options. 
+
+If you are prompted for Primary or Extended, the partition table needs changed to GPT. 
+
+ 
+
+N will create a New partition.   
+
+The following returns are accepting the defaults for the Partition number and first and last sectors or how big the partition is. 
+
+ 
+
+T changes the type of the partition. 
+
+8e is a hex value for the partition type.  In this case it’s for LVM partition 
+
+ 
+
+W writes the changes.  (saves) 
+
+user@host# pvcreate /dev/sdb1 
+
+Initializes physical volume creation for later use with LVM.  This is for the sdb1 partition 
+
+user@host# vgextend system /dev/sdb1 
+
+Adds a physical volume (sdb1) to a volume group (system) 
+
+NOTE: Repeat steps 3 – 6 for any additional drives as necessary [sdc, sdd, etc] 
+
+user@host# lvresize -l  +100%free /dev/system/nsm 
+
+Resizes a logical volume. –l extends the volume to 100% of the free space on the volume group (system) for the root folder 
+
+user@host# xfs_growfs /dev/mapper/system-nsm 
+
+Expands the existing XFS file system 
+
+user@host# df –h /nsm 
+
+Shows disk free of nsm folder (/nsm).  –h changes it to human readable (ie: 28TB) 
+
+NOTE: from this point you can continue with Security Onion setup 
+
+user@host# ./SecurityOnion/setup/so-setup iso 
+
+Command to re-run the Security Onion setup.  Usually under /home/[username]/ 
+
+
+
+
     
 ## Explanations
 ### These explain the "Why" of each step.
 
 [^1]:Changes user to root (SuperUser)
 [^2]:List details about block devices
-[^3]:Starts Fdisk utility for disk [sdb]. Sdb is the assumed additional drive.  Fdisk manages disks (drives) and partitions
+[^3]:Starts Fdisk utility for disk [sdb]. Sdb is the assumed additional drive.  Fdisk manages disks (drives) and partitions
+
+
+
 
