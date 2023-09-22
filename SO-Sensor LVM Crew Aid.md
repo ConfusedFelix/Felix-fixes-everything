@@ -17,12 +17,13 @@ After installing SecurityOnion (SO), the system will reboot and you’ll be pres
 2. *user@host#* `lsblk`  [^2]  
 > NOTE: Interpretation is required to understand what drives belong to what.
 3. *user@host#* `fdisk /dev/sdb` [^3]  
-4.[^4]
+4. Below are the fdisk utility prompts: [^4]
+
    *Command (m for help):* `n`
 
-   *Select (default p):* `{ENTER} `
+   *Select (default p):* `{ENTER}`
 
-   *Partition number (1-4, default 1):* `{ENTER} `
+   *Partition number (1-4, default 1):* `{ENTER}`
 
    *First sector (2048-16777215, default 2048):* `{ENTER} `
 
@@ -33,6 +34,7 @@ After installing SecurityOnion (SO), the system will reboot and you’ll be pres
    *Hex code (type L to list all codes):* `8e`
 
    *Command (m for help):* `w`
+
 5. *user@host#* `pvcreate /dev/sdb1` [^5]
 6. *user@host#* `vgextend system /dev/sdb1` [^6]
 > NOTE: Repeat steps 3 – 6 for any additional drives as necessary (sdc, sdd, etc)
@@ -44,13 +46,11 @@ After installing SecurityOnion (SO), the system will reboot and you’ll be pres
 
 
     
-## Explanations
-### These explain the "Why" of each step.
-
+## Explanations - These explain the "Why" of each step.
 [^1]:Changes user to root (SuperUser)
 [^2]:List details about block devices
 [^3]:Starts Fdisk utility for disk [sdb]. Sdb is the assumed additional drive.  Fdisk manages disks (drives) and partitions
-[^1]:Press M for a full list of options. If you are prompted for Primary or Extended, the partition table needs changed to GPT. 
+[^4]:Press M for a full list of options. If you are prompted for Primary or Extended, the partition table needs changed to GPT. 
    N will create a New partition.   The following returns are accepting the defaults for the Partition number and first and last sectors or how big the partition is. 
    T changes the type of the partition. 8e is a hex value for the partition type.  In this case it’s for LVM partition 
    W writes the changes.  (saves) 
